@@ -9,7 +9,7 @@ import time
 import pyautogui 
 import keyboard
 from playsound import playsound
-
+from time import sleep
 
 #import brainflow related libraries
 from brainflow.board_shim import BoardShim, BrainFlowInputParams, LogLevels, BoardIds, BrainFlowError
@@ -17,6 +17,21 @@ from brainflow.data_filter import DataFilter, FilterTypes, AggOperations, Window
 from brainflow.ml_model import MLModel, BrainFlowMetrics, BrainFlowClassifiers, BrainFlowModelParams
 
 from brainflow.exit_codes import *
+
+#setting up the arduino
+import pyfirmata 
+from pyfirmata import Arduino, SERVO
+from time import sleep
+
+port = 'COM5'
+pin = 8
+board = Arduino(port)
+
+board.digital[pin].mode = SERVO
+
+def rotateServo(pin, angle):
+  board.digital[pin].write(angle)
+  sleep(0.015)
 
 #logging
 BoardShim.enable_board_logger()
@@ -43,7 +58,7 @@ concentration_values = np.array(concentration_values)
 timestamps = []
 are_they_a = []
 concentration_values = [[timestamps], [are_they_a]]
-
+counter = 0
 
 eeg_channels = [0,1]
 
@@ -91,14 +106,19 @@ while boolean == True:
     are_they_a.append(are_they)
     
     if are_they_a[-6:-1] == [0.0, 0.0, 0.0, 0.0, 0.0]:
+            counter += 1
             playsound(r'C:\Users\Varsha Prasad\Desktop\Coding\Hack the North\you are a dissapointement.mp3')
+
+    if counter % 3 == 0:
+        while True:
+            for i in range(0, 180):
+                rotateServo(pin, i)
+            for i in range(180, 1, -1):
+                rotateServo(pin, i)
 
     #if space is pressed, its gonna stop streaming
     if keyboard.is_pressed('space'):
         boolean = False
-
-    
-
 
 print(concentration_values)
 
