@@ -8,6 +8,8 @@ from datetime import datetime
 import time
 import pyautogui 
 import keyboard
+from playsound import playsound
+
 
 #import brainflow related libraries
 from brainflow.board_shim import BoardShim, BrainFlowInputParams, LogLevels, BoardIds, BrainFlowError
@@ -87,6 +89,9 @@ while boolean == True:
         are_they = 0.0
     
     are_they_a.append(are_they)
+    
+    if are_they_a[-6:-1] == [0.0, 0.0, 0.0, 0.0, 0.0]:
+            playsound(r'C:\Users\Varsha Prasad\Desktop\Coding\Hack the North\you are a dissapointement.mp3')
 
     #if space is pressed, its gonna stop streaming
     if keyboard.is_pressed('space'):
