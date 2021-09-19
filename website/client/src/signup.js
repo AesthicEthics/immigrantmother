@@ -23,13 +23,15 @@ function Signup() {
 
         const requestOptions={
             method: "POST",
+            cache: "no-cache",
             headers:{
                 "content-type": "application/json"
             },
             body: JSON.stringify(body)
         }
         fetch("/signup", requestOptions)
-        .then(res=>res.json())
+        .then(response=> {
+            return response.json()})
         .then(data=>console.log(data))
         .then(err=>console.log(err))
 
