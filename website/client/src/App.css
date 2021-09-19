@@ -136,7 +136,17 @@ body {
 
 .SessionHeader {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.homediv {
+  text-align: center;
+}
+
+.homeP {
+  width: 800px;
+  display: inline-block;
+  margin: 5px; 
 }
 
 @keyframes App-logo-spin {
