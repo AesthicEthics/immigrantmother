@@ -16,7 +16,6 @@ function Dashboard() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/about">About Us</Nav.Link>
                     <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 </Nav>
                 {/* <Nav>
@@ -59,31 +58,25 @@ function Dashboard() {
                     <div class="SessionHeader">
                         <h4>Session 1</h4>
                     </div>
-                    <p>Average Intention Span: 20 minutes</p>
-                    <p>Most Productive Time: 1PM</p>
-                    <p>Most Distracted Time: 9PM</p>
+                    <p>Average Intention Span: 30 minutes</p>
+                    <p>Maximum Time Focused: 40 minutes</p>
+                    <p>Slaps Taken: 0</p>
+                </div>
+                <div className="SessionData">
+                    <div class="SessionHeader">
+                        <h4>Session 1</h4>
+                    </div>
+                    <p>Average Intention Span: 10 minutes</p>
                     <p>Maximum Time Focused: 55 minutes</p>
-                    <p>Total Slaps Collected: 4</p>
+                    <p>Slaps Taken: 3</p>
                 </div>
                 <div className="SessionData">
                     <div class="SessionHeader">
                         <h4>Session 1</h4>
                     </div>
                     <p>Average Intention Span: 20 minutes</p>
-                    <p>Most Productive Time: 1PM</p>
-                    <p>Most Distracted Time: 9PM</p>
-                    <p>Maximum Time Focused: 55 minutes</p>
-                    <p>Total Slaps Collected: 4</p>
-                </div>
-                <div className="SessionData">
-                    <div class="SessionHeader">
-                        <h4>Session 1</h4>
-                    </div>
-                    <p>Average Intention Span: 20 minutes</p>
-                    <p>Most Productive Time: 1PM</p>
-                    <p>Most Distracted Time: 9PM</p>
-                    <p>Maximum Time Focused: 55 minutes</p>
-                    <p>Total Slaps Collected: 4</p>
+                    <p>Maximum Time Focused: 30 minutes</p>
+                    <p>Slaps Taken: 1</p>
                 </div>
                 
             </div>
